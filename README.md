@@ -25,11 +25,14 @@ docker run --name db-svc -d \
  ```
 * SpringBoot Run 하기
 ```
-docker run --name myboot-svc -d -p 8080:8080 --net msanet --net-alias=myboot-svc \
--e DB_HOST='db-svc' \
--e DB_PORT='3306' \
--e DB_DATABASE='boot_db' \
--e DB_USERNAME='boot' \
--e DB_PASSWORD='boot' \
+docker run --name myboot-svc -d \
+-p 8080:8080 \
+--net msanet \
+--net-alias=myboot-svc \
+-e DB_HOST=db-svc \
+-e DB_PORT=3306 \
+-e DB_DATABASE=boot_db \
+-e DB_USERNAME=boot \
+-e DB_PASSWORD=boot \
 shin3481/springbootreactjs:0.1
 ```
